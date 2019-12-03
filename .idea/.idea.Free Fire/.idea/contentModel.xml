@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Ill Be There\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Ill Be There\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Free Fire.391733863.00" t="ExcludeRecursive" />
+    <e p="D:\Kuliah\Semester 5\Pemrograman Game\Unity File\Free Fire\Free Fire" t="IncludeFlat">
+      <e p="Free Fire.sln" t="IncludeFlat" />
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
