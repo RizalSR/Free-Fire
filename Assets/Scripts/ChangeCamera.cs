@@ -29,6 +29,7 @@ public class ChangeCamera : MonoBehaviour
             }
             StartCoroutine(SwitchCamera());
         }
+
     }
 
     IEnumerator SwitchCamera()
@@ -45,5 +46,4 @@ public class ChangeCamera : MonoBehaviour
             TPS.SetActive(true);
         }
     }
-
 }

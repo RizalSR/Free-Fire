@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
         GetInput();
         SwapAk47();
         SwapShotgun();
+
     }
 
     void Movement()
@@ -75,7 +76,6 @@ public class PlayerAnimation : MonoBehaviour
             }
         }
     }
-
     IEnumerator AttackRoutine()
     {
         anim.SetBool("shot", true);
@@ -117,5 +117,4 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetInteger("condition", 0);
         }
     }
-
 }
