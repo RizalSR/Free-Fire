@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public static int score;
@@ -19,5 +20,16 @@ public class UIManager : MonoBehaviour
     public void ResetScore()
     {
         score = 0;
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Exit()
+    {
+        Debug.Log("Keluar Permainan");
+        Application.Quit();
     }
 }
