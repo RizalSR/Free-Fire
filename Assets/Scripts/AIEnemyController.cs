@@ -8,7 +8,7 @@ public class AIEnemyController : MonoBehaviour
 {
     public float speed;
     public int EnemyHealth = 30;
-    public static int EnemyDamage = 100;
+    public static int EnemyDamage = 1;
     public static bool GiveDamage = false;
     public AudioSource EnemyAudio;
     Animator anim;
