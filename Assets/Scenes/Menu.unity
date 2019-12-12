@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 416629285}
   - component: {fileID: 416629284}
   m_Layer: 5
-  m_Name: RunText
+  m_Name: JumpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -989,7 +989,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Run
+  m_Text: Jump
 --- !u!222 &416629285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3594,7 +3594,7 @@ GameObject:
   - component: {fileID: 1464260131}
   - component: {fileID: 1464260130}
   m_Layer: 5
-  m_Name: JumpText
+  m_Name: RunText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
