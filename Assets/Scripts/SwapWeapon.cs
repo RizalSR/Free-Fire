@@ -17,14 +17,14 @@ public class SwapWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.ak47key)))
         {
             if (selectWeapon != 1)
             {
                 SwitchWeapon(1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.shotgunkey)))
         {
             if (selectWeapon != 2)
             {

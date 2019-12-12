@@ -7,6 +7,7 @@ public class ChangeCamera : MonoBehaviour
     public int CameraMode;
     public GameObject FPS;
     public GameObject TPS;
+    public static string camerakey;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class ChangeCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Camera"))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), camerakey)))
         {
             if (CameraMode == 1)
             {

@@ -33,12 +33,12 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time >= timeFire && trigger == true)
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.shootkey)) && Time.time >= timeFire && trigger == true)
         {
             timeFire = Time.time + 1f / fireRate;
             Shoot();
         }
-        if (Input.GetButton("Reload") && ammo < ammoStock)
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.reloadkey)) && ammo < ammoStock)
         {
             if (ammoMag != 0)
             {

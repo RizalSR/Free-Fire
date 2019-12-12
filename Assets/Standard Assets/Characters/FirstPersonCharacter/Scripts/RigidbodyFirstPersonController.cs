@@ -130,7 +130,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+            if (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), FirstPersonController.jumpkey)) && !m_Jump)
             {
                 m_Jump = true;
             }
