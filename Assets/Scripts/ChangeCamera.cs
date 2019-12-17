@@ -18,7 +18,7 @@ public class ChangeCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), camerakey)))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.camerakey)))
         {
             if (CameraMode == 1)
             {

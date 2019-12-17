@@ -8,10 +8,10 @@ public class KeySetting : MonoBehaviour
 {
 
     public static Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
-    public Text up, down, left, right, ak47, shotgun, reload, cam, shoot,run,jump;
+    public Text  ak47, shotgun, reload, cam, shoot,run,jump;
     private GameObject currentKey;
 
-    GameObject Panelku;
+    public GameObject Panelku;
 
     //public static string upkey, downkey, rightkey, leftkey, 
     //    shootkey, ak47key, shotgunkey, camerakey, reloadkey;
@@ -21,24 +21,14 @@ public class KeySetting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Panelku = GameObject.Find("SettingPanel");
+        keys.Add("AK47", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AK47", "")));
+        keys.Add("ShotGun", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ShotGun", "")));
+        keys.Add("Reload", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Reload", "")));
+        keys.Add("Camera", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Camera", "")));
+        keys.Add("Shoot", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Shoot", "")));
+        keys.Add("Run", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Run", "")));
+        keys.Add("Jump", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Jump", "")));
 
-        keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "UpArrow")));
-        keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "DownArrow")));
-        keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "LeftArrow")));
-        keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "RightArrow")));
-        keys.Add("AK47", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AK47", "Alpha1")));
-        keys.Add("ShotGun", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("ShotGun", "Alpha2")));
-        keys.Add("Reload", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Reload", "R")));
-        keys.Add("Camera", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Camera", "C")));
-        keys.Add("Shoot", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Shoot", "LeftControl")));
-        keys.Add("Run", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Run", "LeftShift")));
-        keys.Add("Jump", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Jump", "Space")));
-
-        up.text = keys["Up"].ToString();
-        down.text = keys["Down"].ToString();
-        left.text = keys["Left"].ToString();
-        right.text = keys["Right"].ToString();
         ak47.text = keys["AK47"].ToString();
         shotgun.text = keys["ShotGun"].ToString();
         reload.text = keys["Reload"].ToString();
@@ -47,15 +37,12 @@ public class KeySetting : MonoBehaviour
         run.text = keys["Run"].ToString();
         jump.text = keys["Jump"].ToString();
 
-        PlayerAnimation.upkey = keys["Up"].ToString();
-        PlayerAnimation.downkey = keys["Down"].ToString();
-        PlayerAnimation.leftkey = keys["Left"].ToString();
-        PlayerAnimation.rightkey = keys["Right"].ToString();
-        PlayerAnimation.ak47key = keys["AK47"].ToString();
-        PlayerAnimation.shotgunkey = keys["ShotGun"].ToString();
-        PlayerAnimation.reloadkey = keys["Reload"].ToString();
-        ChangeCamera.camerakey = keys["Camera"].ToString();
-        PlayerAnimation.shootkey = keys["Shoot"].ToString();
+
+        Data.ak47key = keys["AK47"].ToString();
+        Data.shotgunkey = keys["ShotGun"].ToString();
+        Data.reloadkey = keys["Reload"].ToString();
+        Data.camerakey = keys["Camera"].ToString();
+        Data.shootkey = keys["Shoot"].ToString();
         FirstPersonController.runkey = keys["Run"].ToString();
         FirstPersonController.jumpkey = keys["Jump"].ToString();
     }
@@ -101,15 +88,11 @@ public class KeySetting : MonoBehaviour
         }
 
         PlayerPrefs.Save();
-        PlayerAnimation.upkey = keys["Up"].ToString();
-        PlayerAnimation.downkey = keys["Down"].ToString();
-        PlayerAnimation.leftkey = keys["Left"].ToString();
-        PlayerAnimation.rightkey = keys["Right"].ToString();
-        PlayerAnimation.ak47key = keys["AK47"].ToString();
-        PlayerAnimation.shotgunkey = keys["ShotGun"].ToString();
-        PlayerAnimation.reloadkey = keys["Reload"].ToString();
-        ChangeCamera.camerakey = keys["Camera"].ToString();
-        PlayerAnimation.shootkey = keys["Shoot"].ToString();
+        Data.ak47key = keys["AK47"].ToString();
+        Data.shotgunkey = keys["ShotGun"].ToString();
+        Data.reloadkey = keys["Reload"].ToString();
+        Data.camerakey = keys["Camera"].ToString();
+        Data.shootkey = keys["Shoot"].ToString();
         FirstPersonController.runkey = keys["Run"].ToString();
         FirstPersonController.jumpkey = keys["Jump"].ToString();
 

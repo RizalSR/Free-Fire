@@ -6,16 +6,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject Panelku;
+    public GameObject Panelku;
     void Start()
     {
-        Panelku = GameObject.Find("SettingPanel");
-        Panelku.SetActive(false);
+        
     }
     public void Menu()
     {
 
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Menu");
     }
 
     public void Setting()

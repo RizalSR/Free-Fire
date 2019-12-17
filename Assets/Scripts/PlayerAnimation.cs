@@ -12,9 +12,6 @@ public class PlayerAnimation : MonoBehaviour
     Vector3 moveDir = Vector3.zero;
     CharacterController controller;
 
-    public static string upkey, downkey, rightkey, leftkey,
-    shootkey, ak47key, shotgunkey, camerakey, reloadkey;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +33,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            if (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), upkey)))
+            if (Input.GetKey(KeyCode.W))
             {
                 if (anim.GetBool("shot") == true)
                 {
@@ -52,7 +49,7 @@ public class PlayerAnimation : MonoBehaviour
 
                 }
             }
-            if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), upkey)))
+            if (Input.GetKeyUp(KeyCode.W))
             {
                 anim.SetBool("run", false);
                 anim.SetInteger("condition", 0);
@@ -68,7 +65,7 @@ public class PlayerAnimation : MonoBehaviour
 
     void GetInput()
     {
-        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.shootkey)))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.shootkey)))
         {
             if (anim.GetBool("run") == true)
             {
@@ -97,12 +94,12 @@ public class PlayerAnimation : MonoBehaviour
 
     void SwapAk47()
     {
-        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.ak47key)))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.ak47key)))
         {
             anim.SetBool("switchWeapon", true);
             anim.SetInteger("condition", 3);
         }
-        else if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.ak47key)))
+        else if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.ak47key)))
         {
             anim.SetBool("switchWeapon", false);
             anim.SetInteger("condition", 0);
@@ -111,12 +108,12 @@ public class PlayerAnimation : MonoBehaviour
 
     void SwapShotgun()
     {
-        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.shotgunkey)))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.shotgunkey)))
         {
             anim.SetBool("switchWeapon", true);
             anim.SetInteger("condition", 3);
         }
-        else if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerAnimation.shotgunkey)))
+        else if (Input.GetKeyUp((KeyCode)System.Enum.Parse(typeof(KeyCode), Data.shotgunkey)))
         {
             anim.SetBool("switchWeapon", false);
             anim.SetInteger("condition", 0);
